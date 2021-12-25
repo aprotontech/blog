@@ -1,0 +1,10 @@
+baseurl = "https://www.aproton.tech/"
+languageCode = "en-us"
+title = "aproton"
+
+[params]
+    copyright  = "Powered by [aproton](//www.aproton.tech). 京ICP备16041151号-2"
+    avatar = "https://avatars.githubusercontent.com/u/1849013?v=4"
+
+[params.profile]
+    follow_button = "https://github.com/aprotontech"
