@@ -1,0 +1,63 @@
+baseurl = "https://www.aproton.tech/"
+languageCode = "zh-CN"
+title = "aproton"
+disqusShortname = ""
+disableRSS = true
+paginate = 10
+footnotereturnlinkcontents = "↩"
+googleAnalytics = ""
+theme = "hugo-icarus-theme"
+# Comment the themesDir option if you use this theme in production
+#themesDir = "./themes"
+
+[params]
+    author = "kuper"
+    bio = "Blogger - Programmer - Kuper"
+    location = "Beijing"
+    logo = "/images/alogo.png"
+    gravatar = ""
+    copyright  = "Powered by [aproton](//www.aproton.tech). 京ICP备16041151号-2"
+    avatar = "https://avatars.githubusercontent.com/u/1849013?v=4"
+    disable_mathjax = false
+
+    # define which types of pages should be shown. By default the type with the most regular pages
+    mainSections = ["post"]
+
+    # Format dates with Go's time formatting
+    date_format = "2006-01-02"
+
+    # Add custom assets with their paths relative to the static folder
+	custom_css = []
+	custom_js  = []
+
+[permalinks]
+    post = "/:year/:month/:day/:slug"
+
+[params.profile]
+    follow_button = "https://github.com/aprotontech"
+
+[social]
+    github          = "aprotontech"
+    twitter         = ""
+
+
+[[params.menu]]
+    before = true
+    label  = "Home"
+    link   = "/"
+
+[[params.menu]]
+    before = false
+    label  = "Tags"
+    link   = "tags/"
+
+[[params.menu]]
+    before = false
+    label  = "Categories"
+    link   = "categories/"
+
+[params.widgets]
+    recent_articles = true
+    categories = true
+    tags = true
+    tag_cloud = true

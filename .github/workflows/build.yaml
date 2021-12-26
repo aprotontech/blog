@@ -1,0 +1,23 @@
+name: BUILD-DEPLOY-SITE
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-website:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: Update Code
+        run: git submodule update --init
+
+      - name: Build site files
+        run: hugo --theme=hugo-icarus-theme --baseUrl="http://www.aproton.tech"
+  deploy-website:
+    needs: build-website
+    runs-on: self-hosted
+    steps:
+      - name: Deploy WebSite
+        run: rm -rf /var/www/aproton/public && cp -rf public /var/www/aproton/
