@@ -15,3 +15,6 @@ hugo server --theme=hugo-icarus-theme --baseUrl="http://$IP" --bind=$IP
 ```
 hugo --theme=hugo-icarus-theme --baseUrl="http://www.aproton.tech"
 ```
+
+# update website
+github runner will update website(www.aproton.tech) when newly code has merged to main branch

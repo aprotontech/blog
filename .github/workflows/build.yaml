@@ -1,7 +1,7 @@
 name: BUILD-DEPLOY-SITE
 on:
   push:
-    branches: [ init, main ]
+    branches: [ main ]
 
 jobs:
   build-website:
