@@ -16,7 +16,7 @@ jobs:
       - name: Build site files
         run: hugo --theme=hugo-icarus-theme --baseUrl="http://www.aproton.tech"
   test-deploy:
-    needs: build-and-docker
+    needs: update-site
     runs-on: self-hosted
     steps:
       - name: Deploy WebSite
