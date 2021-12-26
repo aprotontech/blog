@@ -1,13 +1,14 @@
 baseurl = "https://www.aproton.tech/"
-languageCode = "en-us"
+languageCode = "zh-CN"
 title = "aproton"
 disqusShortname = "aproton"
+disableRSS = true
 
 [params]
     author = "kuper"
     bio = "Blogger - Programmer - Kuper"
     location = "Beijing"
-    logo = "images/alogo.png"
+    logo = "/images/alogo.png"
     gravatar = ""
     copyright  = "Powered by [aproton](//www.aproton.tech). 京ICP备16041151号-2"
     avatar = "https://avatars.githubusercontent.com/u/1849013?v=4"
@@ -17,3 +18,4 @@ disqusShortname = "aproton"
 
 [social]
     github          = "aprotontech"
+    twitter         = ""
