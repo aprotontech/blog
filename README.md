@@ -10,5 +10,5 @@ hugo server --theme=hugo-icarus-theme --baseUrl="http://$IP" --bind=$IP
 
 # render
 ```
-hugo --theme=hugo-icarus-theme
+hugo --theme=hugo-icarus-theme --baseUrl="http://www.aproton.tech"
 ```
