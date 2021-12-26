@@ -4,7 +4,7 @@ on:
     branches: [ init, main ]
 
 jobs:
-  update-site:
+  build-website:
     runs-on: self-hosted
     steps:
       - name: Checkout Code
@@ -15,9 +15,9 @@ jobs:
 
       - name: Build site files
         run: hugo --theme=hugo-icarus-theme --baseUrl="http://www.aproton.tech"
-  test-deploy:
-    needs: update-site
+  deploy-website:
+    needs: build-website
     runs-on: self-hosted
     steps:
       - name: Deploy WebSite
-        run: echo "rm -rf /var/www/aproton/public && cp -rf public /var/www/aproton/" 
+        run: rm -rf /var/www/aproton/public && cp -rf public /var/www/aproton/
