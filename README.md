@@ -1,6 +1,9 @@
 # blog
 
 # install hugo
+```
+sudo apt-get install hugo
+```
 
 # test
 ```

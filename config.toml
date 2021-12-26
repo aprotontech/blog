@@ -1,7 +1,7 @@
 baseurl = "https://www.aproton.tech/"
 languageCode = "zh-CN"
 title = "aproton"
-disqusShortname = "aproton"
+disqusShortname = ""
 disableRSS = true
 paginate = 10
 footnotereturnlinkcontents = "↩"
