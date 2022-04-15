@@ -14,7 +14,7 @@ theme = "hugo-icarus-theme"
     location = "Beijing"
     logo = "/images/alogo.png"
     gravatar = ""
-    copyright  = "Powered by [aproton](//www.aproton.tech). 京ICP备16041151号-2"
+    copyright  = "Powered by [aproton](//www.aproton.tech). [京ICP备16041151号-2](https://beian.miit.gov.cn/)"
     avatar = "https://avatars.githubusercontent.com/u/1849013?v=4"
     disable_mathjax = false
 
