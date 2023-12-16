@@ -1,6 +1,6 @@
 ---
 title: "Window11 安装text-generation-webui体验大模型"
-date: 2021-12-26T10:53:53+08:00
+date: 2023-12-16T20:52:24+08:00
 draft: false
 ---
 
@@ -56,7 +56,4 @@ git clone git@github.com:oobabooga/text-generation-webui.git
 注意：GPU模式下，需要问题前面增加 `[用中文回答]` 大模型才会用中文回答，否则会默认回答英文
 
 ![Chat](tgw/chat.png)
-
-
-
 
