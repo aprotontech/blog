@@ -11,6 +11,7 @@ RUN wget https://golang.google.cn/dl/go1.23.0.linux-${TARGETARCH}.tar.gz -O /tmp
 RUN echo 'export GOPATH=/root/.go' >>/root/.bashrc && \
     echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >>/root/.bashrc && \
     export GOPATH=/root/.go && \
-    /usr/local/go/bin/go env -w GOPROXY=https://goproxy.cn,direct
+    /usr/local/go/bin/go env -w GOPROXY=https://goproxy.cn,direct && \
+    /usr/local/go/bin/go env -w GO111MODULE=on
 
 RUN export GOPATH=/root/.go && CGO_ENABLED=1 /usr/local/go/bin/go install -tags extended github.com/gohugoio/hugo@latest

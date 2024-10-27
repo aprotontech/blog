@@ -105,4 +105,6 @@ self_attention = SelfAttention(input_dim, heads)
 output = self_attention(input_data)
 print(output.shape)  # 输出形状：torch.Size([1, 10, 64])
 ```
+
+PS: 引用来源 [https://developer.aliyun.com/article/1461856](https://developer.aliyun.com/article/1461856)
 </details>

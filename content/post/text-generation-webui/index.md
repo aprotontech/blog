@@ -2,6 +2,8 @@
 title: "Window11 安装text-generation-webui体验大模型"
 date: 2023-12-16T20:52:24+08:00
 draft: false
+categories:
+  - LLM
 ---
 
 当下带有UI界面的开源大模型项目也有一些，随便挑了一个来体验一下。 选择的项目是 text-generation-webui
