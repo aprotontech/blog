@@ -6,7 +6,8 @@ disableRSS = true
 paginate = 10
 footnotereturnlinkcontents = "↩"
 googleAnalytics = ""
-theme = "hugo-icarus-theme"
+#theme = "hugo-icarus-theme"
+theme = "hugo-theme-stack"
 
 [params]
     author = "kuper"

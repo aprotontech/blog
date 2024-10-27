@@ -1,0 +1,16 @@
+{
+    "name": "blog",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "ms-vscode.makefile-tools",
+                "aleksandra.go-group-imports",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+}

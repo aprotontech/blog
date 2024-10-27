@@ -14,12 +14,12 @@ sudo apt-get install hugo
 ## 3. test
 ```
 IP=`ifconfig eth0 | grep inet | grep -v inet6 | awk '{print $2}'`
-hugo server --theme=hugo-icarus-theme --baseUrl="http://$IP" --bind=$IP
+hugo server --theme=hugo-theme-stack --baseURL="http://$IP" --bind=$IP
 ```
 
 ## 4. render
 ```
-hugo --theme=hugo-icarus-theme --baseURL="http://www.aproton.tech"
+hugo --theme=hugo-theme-stack --baseURL="http://www.aproton.tech"
 ```
 
 ## 5. update website
