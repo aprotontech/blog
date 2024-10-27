@@ -14,7 +14,7 @@ jobs:
         run: git submodule update --init
 
       - name: Build site files
-        run: hugo --theme=hugo-icarus-theme --baseUrl="http://www.aproton.tech"
+        run: hugo --theme=hugo-icarus-theme --baseURL="http://www.aproton.tech"
   deploy-website:
     needs: build-website
     runs-on: self-hosted
