@@ -2,6 +2,8 @@
 title: "Attention学习"
 date: 2024-10-17T21:54:32+08:00
 draft: false
+tags:
+  - LLM
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-DYV02DUBOnbDOvGdyY39hAamjFl8A6L1rWd7Ahpplx6HUs/zyCo/s/5V4AIMpL+S" crossorigin="anonymous">  
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-7A9/Zis/0CJi7SEJYfZoXFN9kPm9LP3tL5UJIsLUIIwAtt6OLH48hx1wYLUH3nC2" crossorigin="anonymous"></script>  

@@ -19,7 +19,7 @@ hugo server --theme=hugo-icarus-theme --baseUrl="http://$IP" --bind=$IP
 
 ## 4. render
 ```
-hugo --theme=hugo-icarus-theme --baseUrl="http://www.aproton.tech"
+hugo --theme=hugo-icarus-theme --baseURL="http://www.aproton.tech"
 ```
 
 ## 5. update website
