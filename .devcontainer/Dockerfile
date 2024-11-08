@@ -14,4 +14,4 @@ RUN echo 'export GOPATH=/root/.go' >>/root/.bashrc && \
     /usr/local/go/bin/go env -w GOPROXY=https://goproxy.cn,direct && \
     /usr/local/go/bin/go env -w GO111MODULE=on
 
-RUN export GOPATH=/root/.go && CGO_ENABLED=1 /usr/local/go/bin/go install -tags extended github.com/gohugoio/hugo@latest
+#RUN export GOPATH=/root/.go && CGO_ENABLED=1 /usr/local/go/bin/go install -tags extended github.com/gohugoio/hugo@latest

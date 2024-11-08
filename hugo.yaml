@@ -74,15 +74,9 @@ params:
             default: Licensed under 
 
     comments:
-        enabled: true
+        enabled: false
         provider: disqus
-
-        disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
+    
     widgets:
         homepage:
             - type: search

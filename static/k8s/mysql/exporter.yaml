@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysqld-exporter
+  namespace: mysql-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-exporter
+  template:
+    metadata:
+      labels:
+        app: mysql-exporter
+    spec:
+      containers:
+      - name: mysql-exporter
+        image: prom/mysqld-exporter:latest
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/mysqld_exporter", "--config.my-cnf=/configs/my.cnf"]
+        ports:
+        - containerPort: 9104
+        volumeMounts:
+          - mountPath: /configs
+            name: exporter-config
+            readOnly: true
+      volumes:
+        - name: exporter-config
+          secret:
+            defaultMode: 444
+            secretName: mysqld-exporter-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysqld-exporter-service
+  namespace: mysql-operator
+  labels:
+    aproton.tech/monitor-app: mysql-exporter
+spec:
+  type: ClusterIP
+  selector:
+    app: mysql-exporter
+  ports:
+  - name: mysql-exporter
+    port: 9104
+    protocol: TCP
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysqld-exporter-config
+  namespace: mysql-operator
+stringData:
+  my.cnf: |
+    [client]
+    user = exporter
+    password = <passwd>

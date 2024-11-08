@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: mysql-monitor
+  namespace: mysql-operator
+spec:
+  selector:
+    matchLabels:
+      tsk.com/mysql-component: mysqld
+  namespaceSelector:
+    any: true
+  podMetricsEndpoints:
+  - port: mysql
+    interval: 15s
+    relabelings:
+    - sourceLabels: [__address__]
+      targetLabel: __param_target
+    - sourceLabels: [__meta_kubernetes_pod_name]
+      targetLabel: instance
+    - targetLabel: __address__
+      replacement: mysqld-exporter-service.mysql-operator.svc:9104

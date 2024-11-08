@@ -24,3 +24,8 @@ hugo --theme=hugo-theme-stack --baseURL="http://www.aproton.tech"
 
 ## 5. update website
 github runner will update website(www.aproton.tech) when newly code has merged to main branch
+
+# create new doc
+```shell
+hugo new content post/test/first.md
+```

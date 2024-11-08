@@ -1,0 +1,111 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mycluster-rootpwd
+  namespace: mysql-operator
+stringData:
+  rootUser: root
+  rootHost: '%'
+  rootPassword: "<passwd>"
+---
+
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: mycluster
+  namespace: mysql-operator
+spec:
+  secretName: mycluster-rootpwd
+  tlsUseSelfSigned: true
+  instances: 3
+  podLabels:
+    # used for pod-monitor, don't change it
+    aproton.tech/mysql-component: mysqld
+  router:
+    instances: 2
+    podLabels:
+      aproton.tech/mysql-component: router
+  datadirVolumeClaimTemplate:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    selector:
+      matchLabels:
+        aproton.tech/mysql: mycluster
+  backupProfiles:
+    - name: myfancyprofile
+      dumpInstance:
+        storage:
+          s3:
+            bucketName: mysql-backup
+            config: minio-mysql-backup-secret
+            endpoint: http://minio.minio-operator
+            prefix: /mycluster
+  backupSchedules:
+    - name: mygreatschedule
+      schedule: "0 2 * * *"
+      backupProfileName:  myfancyprofile
+      enabled: true
+
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-data-pv-volume-0
+  labels:
+    aproton.tech/mysql: mycluster
+spec:
+  storageClassName: standard
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/mysql/mycluster"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-data-pv-volume-1
+  labels:
+    aproton.tech/mysql: mycluster
+spec:
+  storageClassName: standard
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/mysql/mycluster"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-data-pv-volume-2
+  labels:
+    aproton.tech/mysql: mycluster
+spec:
+  storageClassName: standard
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/mysql/mycluster"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: minio-mysql-backup-secret
+  namespace: mysql-operator
+stringData:
+  credentials: |
+    [default]
+    aws_access_key_id=<access-key-id>
+    aws_secret_access_key=<secret-access-key>
