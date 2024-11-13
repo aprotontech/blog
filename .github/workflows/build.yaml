@@ -4,19 +4,26 @@ on:
     branches: [ main ]
 
 jobs:
-  build-website:
+  init-website-code:
     runs-on: self-hosted
+    container:
+      image: registry.aproton.tech/aproton/blog-dev:latest
+      credentials:
+        username: ${{ secrets.REGISTRY_USER }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
     steps:
+      - name: InitEnv
+        run: |
+          touch ~/.ssh/known_hosts
+          if [ "$(cat ~/.ssh/known_hosts | grep github.com)" == "" ]; then
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+          fi
       - name: Checkout Code
         uses: actions/checkout@v2
       
       - name: Update Code
-        run: |
-          if [ "$(cat ~/.ssh/known_hosts | grep github.com)" == "" ]; then
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
-          fi
-          git submodule update --init
-
+        run: git submodule update --init
+  build-website:
       - name: Build site files
         run: make render
   deploy-website:
