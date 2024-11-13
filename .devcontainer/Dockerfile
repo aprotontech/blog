@@ -2,9 +2,9 @@ FROM openanolis/anolisos:8.9-x86_64
 
 RUN yum install -y git vim wget make docker net-tools gcc gcc-c++
 
-ARG TARGETARCH=amd64G
+ARG TARGETARCH=amd64
 
-RUN wget https://golang.google.cn/dl/go1.23.0.linux-${TARETARCH}.tar.gz -O /tmp/go1.23.0.linux-${TARGETARCH}.tar.gz && \
+RUN wget https://golang.google.cn/dl/go1.23.0.linux-${TARGETARCH}.tar.gz -O /tmp/go1.23.0.linux-${TARGETARCH}.tar.gz && \
     tar -C /usr/local -xzf /tmp/go1.23.0.linux-${TARGETARCH}.tar.gz && \
     rm -f /tmp/go1.23.0.linux-${TARGETARCH}.tar.gz
 

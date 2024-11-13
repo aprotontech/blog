@@ -20,10 +20,8 @@ jobs:
           fi
       - name: Checkout Code
         uses: actions/checkout@v2
-      
       - name: Update Code
         run: git submodule update --init
-  build-website:
       - name: Build site files
         run: make render
   deploy-website:
