@@ -11,7 +11,11 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Update Code
-        run: git submodule update --init
+        run: |
+          if [ "$(cat ~/.ssh/known_hosts | grep github.com)" == "" ]; then
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+          fi
+          git submodule update --init
 
       - name: Build site files
         run: make render
