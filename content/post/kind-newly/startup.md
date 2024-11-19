@@ -64,4 +64,3 @@ mkdir -p xxxx
 ```yaml
 完整的集群配置
 ```
-
