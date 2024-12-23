@@ -6,7 +6,7 @@ render: ## render to public folder
 	@hugo --theme=hugo-theme-stack --baseURL="http://www.aproton.tech"
 
 local: ## run local server
-	@hugo server --theme=hugo-theme-stack
+	@hugo server --theme=hugo-theme-stack --buildDrafts
 
 ## make help(begin)
 help:

@@ -3,8 +3,10 @@
     (function() {
       var hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?bd5eb702ed0f3e4824d9968f9ee5fef9";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
+      var s = document.getElementsByTagName("script")[0];
+      if (window.location.hostname != '127.0.0.1') {
+        s.parentNode.insertBefore(hm, s);
+      }
     })();
 </script>
     
