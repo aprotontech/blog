@@ -53,4 +53,5 @@ type Overlay struct {
     > 先使用 `SIGTERM`, 如果5s后进程没有结束，再发送 `SIGKILL` 命令
 
 - `container rm`: 从`var/container.json`找到指定的容器，停止后，解除挂载，并删除`Sandbox`目录
+
  

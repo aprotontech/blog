@@ -13,8 +13,8 @@ sudo apt-get install hugo
 
 ## 3. test
 ```
-IP=`ifconfig eth0 | grep inet | grep -v inet6 | awk '{print $2}'`
-hugo server --theme=hugo-theme-stack --baseURL="http://$IP" --bind=$IP
+IP=`ifconfig tap0 | grep inet | grep -v inet6 | awk '{print $2}'`
+hugo server --theme=hugo-theme-stack
 ```
 
 ## 4. render
